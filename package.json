@@ -4,7 +4,7 @@
   "description": "search app",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node search1.js"
   },
   "repository": {
     "type": "git",
