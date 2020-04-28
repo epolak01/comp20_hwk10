@@ -8,8 +8,7 @@
 
 var express = require('express')
 var app = express()
-var port = process.env.PORT || 3000;
-var http = require('http');
+var port = process.env.port || 3000;
 var url = require('url');
 
 app.get('/', function(req, res) {
@@ -19,7 +18,7 @@ app.get('/', function(req, res) {
 app.listen(port, () => console.log('searchapp listening on port ${port}!'));
 
 app.post('/url', function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    //res.writeHead(200, {'Content-Type': 'text/html'});
     
     //Parse the server request
     var q = url.parse(req.url, true).query;
@@ -44,9 +43,10 @@ app.post('/url', function(req, res) {
                     res.write("Company Not Found")
                 } else {
                    var strres = "Company: " + result[0].Company + " Ticker: " + result[0].Ticker
-                    res.write(strres) 
+                    //res.write(strres) 
+                    res.send(strres)
                 }
-                res.end();
+                //res.end();
                 db.close();
             });
         } else if (resptype == "Company") {
@@ -58,9 +58,9 @@ app.post('/url', function(req, res) {
                     res.write("Company Not Found")
                 } else {
                     var strres = "Company: " + result[0].Company + " Ticker: " + result[0].Ticker
-                    res.write(strres)
+                    res.send(strres)
                 }
-                res.end();
+                //res.end();
                 db.close();
             });
         }
