@@ -13,6 +13,19 @@ var url = require('url');
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     
+    fs.readFile("index.html", function (err, pgres) { 
+            if (err) 
+                res.write("INDEX.HTML NOT FOUND"); 
+            else { 
+                // The following 3 lines 
+                // are reponsible for sending the html file 
+                // and ends the response process 
+                res.writeHead(200, { 'Content-Type': 'text/html' }); 
+                res.write(pgres); 
+                res.end(); 
+            } 
+        }); 
+    
     //Parse the server request
     var q = url.parse(req.url, true).query;
     var resptype = q.type;
