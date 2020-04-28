@@ -1,10 +1,10 @@
 {
-  "name": "helloapp",
+  "name": "searchapp",
   "version": "1.0.0",
-  "description": "node app ",
-  "main": "hello_app.js",
+  "description": "search app ",
+  "main": "search1.js",
   "scripts": {
-  "start": "node hello_app.js"
+  "start": "node search1.js"
 },
   "repository": {
   "type": "git",
