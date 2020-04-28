@@ -2,7 +2,7 @@
   "name": "searchapp",
   "version": "1.0.0",
   "description": "search app",
-  "main": "index.js",
+  "main": "search1.js",
   "scripts": {
     "start": "node search1.js"
   },
